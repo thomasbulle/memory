@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { UP_TIMER } from '../actions/actionsTypes';
+import { UP_TIMER } from 'actions/actionsTypes';
 
 const initialState = {
   timer: '00:00',

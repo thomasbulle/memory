@@ -1,4 +1,4 @@
-import { ADD_CLICK } from '../actions/actionsTypes';
+import { ADD_CLICK } from 'actions/actionsTypes';
 
 const initialState = {
   clicks: 0,

@@ -5,7 +5,7 @@ import './styles.scss';
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { upTimer } from '../../actions';
+import { upTimer } from 'actions';
 
 class Header extends Component {
   constructor(props) {
@@ -35,8 +35,8 @@ class Header extends Component {
       <div className='header-wrapper'>
         <h1 className='title-header'>Jeu de memory</h1>
         <div className='stats-header-wrapper'>
-          <p>Time : {timer}</p>
-          <p>Nombre de clicks : {clicks}</p>
+          <p className='time-header'>Time : {timer}</p>
+          <p className='nb-clicks-header'>Nombre de clicks : {clicks}</p>
         </div>
       </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 
 // containers
-import Header from './containers/Header/'
+import Header from 'containers/Header/';
 
 function App() {
   return (

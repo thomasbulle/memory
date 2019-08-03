@@ -3,11 +3,17 @@ import moment from 'moment';
 import { UP_TIMER } from '../actions/actionsTypes';
 
 const initialState = {
-  timer: "00:00",
+  timer: '00:00',
 };
 
 const setTime = (time) => {
-  const formattedTime = moment(time, 'HH:ss').add(1, 'seconds').format('HH:ss');
+  let formattedTime = moment(time, 'HH:ss').add(1, 'seconds').format('HH:ss');
+  formattedTime = formattedTime.split(':');
+  if (formattedTime[1] === '00') {
+    formattedTime = moment(formattedTime.join(':'), 'HH:ss').add(1, 'hours').format('HH:ss');
+  } else {
+    formattedTime = formattedTime.join(':');
+  }
   return formattedTime;
 };
 

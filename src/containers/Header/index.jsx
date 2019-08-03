@@ -2,20 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
+// Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { upTimer } from '../../actions';
+
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer: 0,
+      
     };
 
     this.timerInterval = null;
   }
 
   componentDidMount() {
-    const { timer } = this.state;
+    const { upTimer } = this.props;
     this.timerInterval = setInterval(() => {
-      this.setState({ timer: timer + 1 });
+      upTimer();
     }, 1000);
   }
 
@@ -24,15 +29,14 @@ class Header extends Component {
   }
   
   render() {
-    const { timer } = this.state;
-    const { countClick } = this.props;
+    const { clicks, timer } = this.props;
 
     return(
       <div className='header-wrapper'>
         <h1 className='title-header'>Jeu de memory</h1>
         <div className='stats-header-wrapper'>
           <p>Time : {timer}</p>
-          <p>Nombre de click : {countClick}</p>
+          <p>Nombre de clicks : {clicks}</p>
         </div>
       </div>
     );
@@ -40,7 +44,19 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  countClick: PropTypes.number,
+  clicks: PropTypes.number,
+  upTimer: PropTypes.func,
 };
 
-export default Header;
+const mstp = state => ({
+  clicks: state.player.clicks,
+  timer: state.gameStats.timer,
+});
+
+const mdtp = dispatch => (
+  bindActionCreators({
+    upTimer,
+  }, dispatch)
+)
+
+export default connect(mstp, mdtp)(Header);

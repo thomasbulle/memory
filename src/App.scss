@@ -1,0 +1,8 @@
+@import '../src/config/styles.scss';
+
+.App {
+  min-height: 100vh;
+  background: url('/ressources/images/prism.png');
+  text-align: center;
+  color: $white;
+}

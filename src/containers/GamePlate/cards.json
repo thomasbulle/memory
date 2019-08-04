@@ -1,0 +1,34 @@
+[
+  {
+    "id": "0",
+    "name": "imac"
+  },
+  {
+    "id": "1",
+    "name": "gameboy"
+  },
+  {
+    "id": "2",
+    "name": "game-console"
+  },
+  {
+    "id": "3",
+    "name": "headphones"
+  },
+  {
+    "id": "4",
+    "name": "joystick"
+  },
+  {
+    "id": "5",
+    "name": "macbook"
+  },
+  {
+    "id": "6",
+    "name": "photo-camera"
+  },
+  {
+    "id": "7",
+    "name": "smartphone"
+  }
+]

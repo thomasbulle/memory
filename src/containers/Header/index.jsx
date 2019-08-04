@@ -57,6 +57,6 @@ const mdtp = dispatch => (
   bindActionCreators({
     upTimer,
   }, dispatch)
-)
+);
 
 export default connect(mstp, mdtp)(Header);

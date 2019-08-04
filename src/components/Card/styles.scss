@@ -1,0 +1,27 @@
+@import 'config/styles.scss';
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 5px solid rgb(116, 116, 116);
+  border-radius: 5px;
+
+  @media (max-width: $mobileL) {
+    width: 85px;
+    height: 85px;
+  }
+
+  & img {
+    max-width: 100%;
+    height: auto;
+
+    @media (max-width: $mobileL) {
+      max-width: 70%;
+    }
+  }
+}

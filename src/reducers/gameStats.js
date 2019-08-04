@@ -1,9 +1,10 @@
 import moment from 'moment';
 
-import { UP_TIMER } from 'actions/actionsTypes';
+import { UP_TIMER, SET_DECK } from 'actions/actionsTypes';
 
 const initialState = {
   timer: '00:00',
+  deck: [],
 };
 
 const setTime = (time) => {
@@ -24,6 +25,11 @@ const gameStats = (state = initialState, action) => {
         ...state,
         timer: setTime(state.timer),
       };
+    case SET_DECK:
+      return {
+        ...state,
+        deck: action.deck,
+      }
     default:
       return state;
   };

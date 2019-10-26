@@ -1,4 +1,4 @@
-import { SET_DECK, ADD_CLICK_COUNTER, ON_RETURN_CARD } from 'actions/actionsTypes';
+import { SET_DECK, ADD_CLICK_COUNTER, ON_RETURN_CARD } from 'store/actions/actionsTypes';
 
 const initialState = {
   clicks: 0,

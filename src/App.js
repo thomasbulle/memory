@@ -11,7 +11,7 @@ import GamePlate from 'containers/GamePlate/';
 // redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setDeck } from 'actions';
+import { setDeck } from 'store/actions';
 
 class App extends Component {
 

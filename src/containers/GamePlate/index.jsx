@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-// components
-import Card from 'components/Card'
-
 // Redux
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { addClickCounter, onReturnCard } from 'actions';
+import { addClickCounter, onReturnCard } from 'store/actions';
+
+// Components
+import Card from 'components/Card';
+
 
 class GamePlate extends Component {
   constructor(props) {
@@ -46,19 +46,10 @@ class GamePlate extends Component {
 GamePlate.propTypes = {
   dispatch: PropTypes.func,
   deck: PropTypes.array,
-  addClickCounter: PropTypes.func,
-  onReturnCard: PropTypes.func,
 };
 
-const mstp = state => ({
+const mapStateToProps = state => ({
   deck: state.player.deck
 });
 
-const mdtp = dispatch => (
-  bindActionCreators({
-    addClickCounter,
-    onReturnCard,
-  }, dispatch)
-);
-
-export default connect(mstp, mdtp)(GamePlate);
+export default connect(mapStateToProps)(GamePlate);

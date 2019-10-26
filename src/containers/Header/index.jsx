@@ -4,23 +4,19 @@ import './styles.scss';
 
 // Redux
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { upTimer } from 'actions';
+import { upTimer } from 'store/actions';
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
-    };
 
     this.timerInterval = null;
   }
 
   componentDidMount() {
-    const { upTimer } = this.props;
+    const { dispatch } = this.props;
     this.timerInterval = setInterval(() => {
-      upTimer();
+      dispatch(upTimer());
     }, 1000);
   }
 
@@ -44,19 +40,14 @@ class Header extends Component {
 }
 
 Header.propTypes = {
+  dispatch: PropTypes.func,
   clicks: PropTypes.number,
-  upTimer: PropTypes.func,
+  timer: PropTypes.number,
 };
 
-const mstp = state => ({
+const mapStateToProps = state => ({
   clicks: state.player.clicks,
   timer: state.gameStats.timer,
 });
 
-const mdtp = dispatch => (
-  bindActionCreators({
-    upTimer,
-  }, dispatch)
-);
-
-export default connect(mstp, mdtp)(Header);
+export default connect(mapStateToProps)(Header);

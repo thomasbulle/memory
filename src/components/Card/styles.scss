@@ -16,6 +16,15 @@
     height: 85px;
   }
 
+  &.hidden {
+    background-color: $orangeBlaze;
+  }
+
+  .question-mark-card {
+    color: $black;
+    font-size: 50px;
+  }
+
   & img {
     max-width: 100%;
     height: auto;

@@ -8,6 +8,11 @@ export const setDeck = (deck) => ({
   deck,
 });
 
-export const addClick = () => ({
-  type: 'ADD_CLICK',
+export const addClickCounter = () => ({
+  type: 'ADD_CLICK_COUNTER',
+});
+
+export const onReturnCard = (id) => ({
+  type: 'ON_RETURN_CARD',
+  id,
 });

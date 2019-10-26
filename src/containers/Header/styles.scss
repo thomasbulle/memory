@@ -10,7 +10,7 @@
     margin: 0;
     font-family: 'Gloria Hallelujah', Arial, sans-serif;
     font-size: 40px;
-    @media (max-width: $mobileS) {
+    @media (max-width: $mobileL) {
       font-size: 35px;
     }
   }
@@ -21,7 +21,7 @@
     font-size: 1.5em;
     font-family: 'Inconsolata', Arial, sans-serif;
 
-    @media (max-width: $mobileS) {
+    @media (max-width: $mobileL) {
       flex-direction: column;
     }
 
@@ -32,7 +32,7 @@
     }
 
     .time-header {
-      @media (max-width: $mobileS) {
+      @media (max-width: $mobileL) {
         margin-bottom: 0;
       }
     }
